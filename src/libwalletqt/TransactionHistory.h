@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Motif Project
 //
 // All rights reserved.
 //
@@ -33,7 +33,7 @@
 #include <QList>
 #include <QDateTime>
 
-namespace Monero {
+namespace Motif {
 class TransactionHistory;
 }
 
@@ -70,11 +70,11 @@ public slots:
 
 
 private:
-    explicit TransactionHistory(Monero::TransactionHistory * pimpl, QObject *parent = 0);
+    explicit TransactionHistory(Motif::TransactionHistory * pimpl, QObject *parent = 0);
 
 private:
     friend class Wallet;
-    Monero::TransactionHistory * m_pimpl;
+    Motif::TransactionHistory * m_pimpl;
     mutable QList<TransactionInfo*> m_tinfo;
     mutable QDateTime   m_firstDateTime;
     mutable QDateTime   m_lastDateTime;

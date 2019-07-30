@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The Motif Project
 // 
 // All rights reserved.
 // 
@@ -29,17 +29,17 @@
 import QtQuick.Controls 2.0
 import QtQuick 2.9
 
-import "../components" as MoneroComponents
+import "../components" as MotifComponents
 
 TextField {
-    font.family: MoneroComponents.Style.fontRegular.name
+    font.family: MotifComponents.Style.fontRegular.name
     font.pixelSize: 18
     font.bold: true
     horizontalAlignment: TextInput.AlignLeft
     selectByMouse: true
-    color: MoneroComponents.Style.defaultFontColor
-    selectionColor: MoneroComponents.Style.textSelectionColor
-    selectedTextColor: MoneroComponents.Style.textSelectedColor
+    color: MotifComponents.Style.defaultFontColor
+    selectionColor: MotifComponents.Style.textSelectionColor
+    selectedTextColor: MotifComponents.Style.textSelectedColor
 
     background: Rectangle {
         color: "transparent"

@@ -1,15 +1,15 @@
 import QtQuick 2.9
 
-import "." as MoneroComponents
-import "effects/" as MoneroEffects
+import "." as MotifComponents
+import "effects/" as MotifEffects
 
 Rectangle {
-    color: MoneroComponents.Style.appWindowBorderColor
+    color: MotifComponents.Style.appWindowBorderColor
     height: 1
 
-    MoneroEffects.ColorTransition {
+    MotifEffects.ColorTransition {
         targetObj: parent
-        blackColor: MoneroComponents.Style._b_appWindowBorderColor
-        whiteColor: MoneroComponents.Style._w_appWindowBorderColor
+        blackColor: MotifComponents.Style._b_appWindowBorderColor
+        whiteColor: MotifComponents.Style._w_appWindowBorderColor
     }
 }

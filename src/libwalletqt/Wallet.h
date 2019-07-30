@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Motif Project
 //
 // All rights reserved.
 //
@@ -36,13 +36,13 @@
 #include <QJSValue>
 #include <QtConcurrent/QtConcurrent>
 
-#include "wallet/api/wallet2_api.h" // we need to have an access to the Monero::Wallet::Status enum here;
+#include "wallet/api/wallet2_api.h" // we need to have an access to the Motif::Wallet::Status enum here;
 #include "qt/FutureScheduler.h"
 #include "PendingTransaction.h" // we need to have an access to the PendingTransaction::Priority enum here;
 #include "UnsignedTransaction.h"
 #include "NetworkType.h"
 
-namespace Monero {
+namespace Motif {
     class Wallet; // forward declaration
 }
 
@@ -90,17 +90,17 @@ public:
 
 
     enum Status {
-        Status_Ok       = Monero::Wallet::Status_Ok,
-        Status_Error    = Monero::Wallet::Status_Error,
-        Status_Critical = Monero::Wallet::Status_Critical
+        Status_Ok       = Motif::Wallet::Status_Ok,
+        Status_Error    = Motif::Wallet::Status_Error,
+        Status_Critical = Motif::Wallet::Status_Critical
     };
 
     Q_ENUM(Status)
 
     enum ConnectionStatus {
-        ConnectionStatus_Connected       = Monero::Wallet::ConnectionStatus_Connected,
-        ConnectionStatus_Disconnected    = Monero::Wallet::ConnectionStatus_Disconnected,
-        ConnectionStatus_WrongVersion    = Monero::Wallet::ConnectionStatus_WrongVersion
+        ConnectionStatus_Connected       = Motif::Wallet::ConnectionStatus_Connected,
+        ConnectionStatus_Disconnected    = Motif::Wallet::ConnectionStatus_Disconnected,
+        ConnectionStatus_WrongVersion    = Motif::Wallet::ConnectionStatus_WrongVersion
     };
 
     Q_ENUM(ConnectionStatus)
@@ -361,7 +361,7 @@ signals:
 
 private:
     Wallet(QObject * parent = nullptr);
-    Wallet(Monero::Wallet *w, QObject * parent = 0);
+    Wallet(Motif::Wallet *w, QObject * parent = 0);
     ~Wallet();
 
     //! returns current wallet's block height
@@ -378,7 +378,7 @@ private:
     friend class WalletManager;
     friend class WalletListenerImpl;
     //! libwallet's
-    Monero::Wallet * m_walletImpl;
+    Motif::Wallet * m_walletImpl;
     // history lifetime managed by wallet;
     TransactionHistory * m_history;
     // Used for UI history view
@@ -406,7 +406,7 @@ private:
     bool m_connectionStatusRunning;
     QString m_daemonUsername;
     QString m_daemonPassword;
-    Monero::WalletListener *m_walletListener;
+    Motif::WalletListener *m_walletListener;
     FutureScheduler m_scheduler;
 };
 

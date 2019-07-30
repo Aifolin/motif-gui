@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The Motif Project
 //
 // All rights reserved.
 //
@@ -33,8 +33,8 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Window 2.0
 
-import "../components" as MoneroComponents
-import "effects/" as MoneroEffects
+import "../components" as MotifComponents
+import "effects/" as MotifEffects
 
 Rectangle {
     id: root
@@ -58,15 +58,15 @@ Rectangle {
     signal closeCallback();
 
     // background
-    MoneroEffects.GradientBackground {
+    MotifEffects.GradientBackground {
         anchors.fill: parent
-        fallBackColor: MoneroComponents.Style.middlePanelBackgroundColor
-        initialStartColor: MoneroComponents.Style.middlePanelBackgroundGradientStart
-        initialStopColor: MoneroComponents.Style.middlePanelBackgroundGradientStop
-        blackColorStart: MoneroComponents.Style._b_middlePanelBackgroundGradientStart
-        blackColorStop: MoneroComponents.Style._b_middlePanelBackgroundGradientStop
-        whiteColorStart: MoneroComponents.Style._w_middlePanelBackgroundGradientStart
-        whiteColorStop: MoneroComponents.Style._w_middlePanelBackgroundGradientStop
+        fallBackColor: MotifComponents.Style.middlePanelBackgroundColor
+        initialStartColor: MotifComponents.Style.middlePanelBackgroundGradientStart
+        initialStopColor: MotifComponents.Style.middlePanelBackgroundGradientStop
+        blackColorStart: MotifComponents.Style._b_middlePanelBackgroundGradientStart
+        blackColorStop: MotifComponents.Style._b_middlePanelBackgroundGradientStop
+        whiteColorStart: MotifComponents.Style._w_middlePanelBackgroundGradientStart
+        whiteColorStop: MotifComponents.Style._w_middlePanelBackgroundGradientStop
         start: Qt.point(0, 0)
         end: Qt.point(height, width)
     }
@@ -110,11 +110,11 @@ Rectangle {
             Layout.topMargin: 14
             Layout.fillWidth: true
 
-            MoneroComponents.Label {
+            MotifComponents.Label {
                 id: dialogTitle
                 fontSize: 18
                 fontFamily: "Arial"
-                color: MoneroComponents.Style.defaultFontColor
+                color: MotifComponents.Style.defaultFontColor
             }
         }
 
@@ -133,13 +133,13 @@ Rectangle {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     renderType: Text.QtRendering
-                    font.family: MoneroComponents.Style.fontLight.name
+                    font.family: MotifComponents.Style.fontLight.name
                     textFormat: TextEdit.AutoText
                     readOnly: true
                     font.pixelSize: 14
                     selectByMouse: false
                     wrapMode: TextEdit.Wrap
-                    color: MoneroComponents.Style.defaultFontColor
+                    color: MotifComponents.Style.defaultFontColor
 
                     MouseArea {
                         anchors.fill: parent
@@ -164,7 +164,7 @@ Rectangle {
             spacing: 60
             Layout.alignment: Qt.AlignHCenter
 
-            MoneroComponents.StandardButton {
+            MotifComponents.StandardButton {
                 id: cancelButton
                 text: qsTr("Cancel") + translationManager.emptyString
                 onClicked: {
@@ -173,7 +173,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.StandardButton {
+            MotifComponents.StandardButton {
                 id: okButton
                 text: qsTr("OK") + translationManager.emptyString
                 KeyNavigation.tab: cancelButton
@@ -194,12 +194,12 @@ Rectangle {
         height: 48
         color: "transparent"
 
-        MoneroEffects.ImageMask {
+        MotifEffects.ImageMask {
             anchors.centerIn: parent
             width: 16
             height: 16
-            image: MoneroComponents.Style.titleBarCloseSource
-            color: MoneroComponents.Style.defaultFontColor
+            image: MotifComponents.Style.titleBarCloseSource
+            color: MotifComponents.Style.defaultFontColor
             opacity: 0.75
         }
 
@@ -218,7 +218,7 @@ Rectangle {
     // window borders
     Rectangle{
         width: 1
-        color: MoneroComponents.Style.grey
+        color: MotifComponents.Style.grey
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.bottom: parent.bottom
@@ -226,7 +226,7 @@ Rectangle {
 
     Rectangle{
         width: 1
-        color: MoneroComponents.Style.grey
+        color: MotifComponents.Style.grey
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.bottom: parent.bottom
@@ -234,7 +234,7 @@ Rectangle {
 
     Rectangle{
         height: 1
-        color: MoneroComponents.Style.grey
+        color: MotifComponents.Style.grey
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.right: parent.right
@@ -242,7 +242,7 @@ Rectangle {
 
     Rectangle{
         height: 1
-        color: MoneroComponents.Style.grey
+        color: MotifComponents.Style.grey
         anchors.left: parent.left
         anchors.bottom: parent.bottom
         anchors.right: parent.right

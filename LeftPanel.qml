@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Motif Project
 // 
 // All rights reserved.
 // 
@@ -29,13 +29,13 @@
 import QtQuick 2.9
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
-import moneroComponents.Wallet 1.0
-import moneroComponents.NetworkType 1.0
-import moneroComponents.Clipboard 1.0
+import motifComponents.Wallet 1.0
+import motifComponents.NetworkType 1.0
+import motifComponents.Clipboard 1.0
 import FontAwesome 1.0
 
-import "components" as MoneroComponents
-import "components/effects/" as MoneroEffects
+import "components" as MotifComponents
+import "components/effects/" as MotifEffects
 
 Rectangle {
     id: panel
@@ -89,21 +89,21 @@ Rectangle {
     anchors.bottom: parent.bottom
     anchors.top: parent.top
 
-    MoneroEffects.GradientBackground {
+    MotifEffects.GradientBackground {
         anchors.fill: parent
-        fallBackColor: MoneroComponents.Style.middlePanelBackgroundColor
-        initialStartColor: MoneroComponents.Style.leftPanelBackgroundGradientStart
-        initialStopColor: MoneroComponents.Style.leftPanelBackgroundGradientStop
-        blackColorStart: MoneroComponents.Style._b_leftPanelBackgroundGradientStart
-        blackColorStop: MoneroComponents.Style._b_leftPanelBackgroundGradientStop
-        whiteColorStart: MoneroComponents.Style._w_leftPanelBackgroundGradientStart
-        whiteColorStop: MoneroComponents.Style._w_leftPanelBackgroundGradientStop
+        fallBackColor: MotifComponents.Style.middlePanelBackgroundColor
+        initialStartColor: MotifComponents.Style.leftPanelBackgroundGradientStart
+        initialStopColor: MotifComponents.Style.leftPanelBackgroundGradientStop
+        blackColorStart: MotifComponents.Style._b_leftPanelBackgroundGradientStart
+        blackColorStop: MotifComponents.Style._b_leftPanelBackgroundGradientStop
+        whiteColorStart: MotifComponents.Style._w_leftPanelBackgroundGradientStart
+        whiteColorStop: MotifComponents.Style._w_leftPanelBackgroundGradientStop
         posStart: 0.6
         start: Qt.point(0, 0)
         end: Qt.point(height, width)
     }
 
-    // card with monero logo
+    // card with motif logo
     Column {
         visible: true
         z: 2
@@ -125,7 +125,7 @@ Rectangle {
 
                 Image {
                     id: card
-                    visible: !isOpenGL || MoneroComponents.Style.blackTheme
+                    visible: !isOpenGL || MotifComponents.Style.blackTheme
                     width: 260
                     height: 170
                     fillMode: Image.PreserveAspectFit
@@ -133,7 +133,7 @@ Rectangle {
                 }
 
                 DropShadow {
-                    visible: isOpenGL && !MoneroComponents.Style.blackTheme
+                    visible: isOpenGL && !MotifComponents.Style.blackTheme
                     anchors.fill: card
                     horizontalOffset: 3
                     verticalOffset: 3
@@ -144,7 +144,7 @@ Rectangle {
                     cached: true
                 }
 
-                MoneroComponents.TextPlain {
+                MotifComponents.TextPlain {
                     id: testnetLabel
                     visible: persistentSettings.nettype != NetworkType.MAINNET
                     text: (persistentSettings.nettype == NetworkType.TESTNET ? qsTr("Testnet") : qsTr("Stagenet")) + translationManager.emptyString
@@ -158,7 +158,7 @@ Rectangle {
                     themeTransition: false
                 }
 
-                MoneroComponents.TextPlain {
+                MotifComponents.TextPlain {
                     id: viewOnlyLabel
                     visible: viewOnly
                     text: qsTr("View Only") + translationManager.emptyString
@@ -202,7 +202,7 @@ Rectangle {
                         }
                     }
                 }
-                MoneroComponents.Label {
+                MotifComponents.Label {
                     fontSize: 20
                     text: "¥"
                     color: "white"
@@ -232,7 +232,7 @@ Rectangle {
                 height: 490
                 width: 50
 
-                MoneroComponents.TextPlain {
+                MotifComponents.TextPlain {
                     visible: !(persistentSettings.fiatPriceToggle && persistentSettings.fiatPriceEnabled)
                     id: balanceText
                     themeTransition: false
@@ -261,10 +261,10 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onEntered: {
-                            parent.color = MoneroComponents.Style.orange
+                            parent.color = MotifComponents.Style.orange
                         }
                         onExited: {
-                            parent.color = MoneroComponents.Style.white
+                            parent.color = MotifComponents.Style.white
                         }
                         onClicked: {
                                 console.log("Copied to clipboard");
@@ -274,7 +274,7 @@ Rectangle {
                     }
                 }
 
-                MoneroComponents.TextPlain {
+                MotifComponents.TextPlain {
                     visible: !balanceText.visible
                     id: balanceTextFiat
                     themeTransition: false
@@ -291,10 +291,10 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onEntered: {
-                            parent.color = MoneroComponents.Style.orange
+                            parent.color = MotifComponents.Style.orange
                         }
                         onExited: {
-                            parent.color = MoneroComponents.Style.white
+                            parent.color = MotifComponents.Style.white
                         }
                         onClicked: {
                                 console.log("Copied to clipboard");
@@ -304,7 +304,7 @@ Rectangle {
                     }
                 }
 
-                MoneroComponents.TextPlain {
+                MotifComponents.TextPlain {
                     id: unlockedBalanceText
                     visible: !(persistentSettings.fiatPriceToggle && persistentSettings.fiatPriceEnabled)
                     themeTransition: false
@@ -333,10 +333,10 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onEntered: {
-                            parent.color = MoneroComponents.Style.orange
+                            parent.color = MotifComponents.Style.orange
                         }
                         onExited: {
-                            parent.color = MoneroComponents.Style.white
+                            parent.color = MotifComponents.Style.white
                         }
                         onClicked: {
                                 console.log("Copied to clipboard");
@@ -346,7 +346,7 @@ Rectangle {
                     }
                 }
 
-                MoneroComponents.TextPlain {
+                MotifComponents.TextPlain {
                     id: unlockedBalanceTextFiat
                     themeTransition: false
                     visible: !unlockedBalanceText.visible
@@ -363,10 +363,10 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onEntered: {
-                            parent.color = MoneroComponents.Style.orange
+                            parent.color = MotifComponents.Style.orange
                         }
                         onExited: {
-                            parent.color = MoneroComponents.Style.white
+                            parent.color = MotifComponents.Style.white
                         }
                         onClicked: {
                                 console.log("Copied to clipboard");
@@ -376,7 +376,7 @@ Rectangle {
                     }
                 }
 
-                MoneroComponents.Label {
+                MotifComponents.Label {
                     id: unlockedBalanceLabel
                     visible: true
                     text: qsTr("Unlocked balance") + translationManager.emptyString
@@ -389,7 +389,7 @@ Rectangle {
                     themeTransition: false
                 }
 
-                MoneroComponents.Label {
+                MotifComponents.Label {
                     visible: !isMobile
                     id: balanceLabel
                     text: qsTr("Balance") + translationManager.emptyString
@@ -438,14 +438,14 @@ Rectangle {
             property var previousButton: transferButton
 
             // top border
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 anchors.left: parent.left
                 anchors.right: parent.right
                 anchors.leftMargin: 16
             }
 
             // ------------- Account tab ---------------
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: accountButton
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -459,7 +459,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: accountButton.present
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -467,7 +467,7 @@ Rectangle {
             }
 
             // ------------- Transfer tab ---------------
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: transferButton
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -481,7 +481,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: transferButton.present
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -490,7 +490,7 @@ Rectangle {
 
             // ------------- AddressBook tab ---------------
 
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: addressBookButton
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -505,7 +505,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: addressBookButton.present
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -513,7 +513,7 @@ Rectangle {
             }
 
             // ------------- Receive tab ---------------
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: receiveButton
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -527,7 +527,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: receiveButton.present
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -536,7 +536,7 @@ Rectangle {
 
             // ------------- Merchant tab ---------------
 
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: merchantButton
                 visible: appWindow.walletMode >= 2
                 anchors.left: parent.left
@@ -552,7 +552,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: merchantButton.present && appWindow.walletMode >= 2
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -561,7 +561,7 @@ Rectangle {
 
             // ------------- History tab ---------------
 
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: historyButton
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -575,7 +575,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: historyButton.present
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -583,7 +583,7 @@ Rectangle {
             }
 
             // ------------- Advanced tab ---------------
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: advancedButton
                 visible: appWindow.walletMode >= 2
                 anchors.left: parent.left
@@ -597,7 +597,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: advancedButton.present && appWindow.walletMode >= 2
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -605,7 +605,7 @@ Rectangle {
             }
 
             // ------------- Mining tab ---------------
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: miningButton
                 visible: !isAndroid && !isIOS && appWindow.walletMode >= 2
                 anchors.left: parent.left
@@ -621,7 +621,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: miningButton.present && appWindow.walletMode >= 2
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -629,7 +629,7 @@ Rectangle {
             }
 
             // ------------- TxKey tab ---------------
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: txkeyButton
                 visible: appWindow.walletMode >= 2
                 anchors.left: parent.left
@@ -645,7 +645,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: txkeyButton.present && appWindow.walletMode >= 2
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -653,7 +653,7 @@ Rectangle {
             }
 
             // ------------- Shared RingDB tab ---------------
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: sharedringdbButton
                 visible: appWindow.walletMode >= 2
                 anchors.left: parent.left
@@ -669,7 +669,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: sharedringdbButton.present && appWindow.walletMode >= 2
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -677,7 +677,7 @@ Rectangle {
             }
 
             // ------------- Sign/verify tab ---------------
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: signButton
                 visible: appWindow.walletMode >= 2
                 anchors.left: parent.left
@@ -693,7 +693,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: signButton.present && appWindow.walletMode >= 2
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -701,7 +701,7 @@ Rectangle {
             }
 
             // ------------- Settings tab ---------------
-            MoneroComponents.MenuButton {
+            MotifComponents.MenuButton {
                 id: settingsButton
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -715,7 +715,7 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.MenuButtonDivider {
+            MotifComponents.MenuButtonDivider {
                 visible: settingsButton.present
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -737,7 +737,7 @@ Rectangle {
             color: "transparent"
         }
 
-        MoneroComponents.NetworkStatusItem {
+        MotifComponents.NetworkStatusItem {
             id: networkStatus
             anchors.left: parent.left
             anchors.right: parent.right
@@ -748,7 +748,7 @@ Rectangle {
             height: 48
         }
 
-        MoneroComponents.ProgressBar {
+        MotifComponents.ProgressBar {
             id: progressBar
             anchors.left: parent.left
             anchors.right: parent.right
@@ -758,7 +758,7 @@ Rectangle {
             visible: networkStatus.connected
         }
 
-        MoneroComponents.ProgressBar {
+        MotifComponents.ProgressBar {
             id: daemonProgressBar
             anchors.left: parent.left
             anchors.right: parent.right

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2015, The Monero Project
+// Copyright (c) 2014-2015, The Motif Project
 //
 // All rights reserved.
 //
@@ -28,8 +28,8 @@
 
 import QtQuick 2.9
 
-import "../components" as MoneroComponents
-import "../components/effects/" as MoneroEffects
+import "../components" as MotifComponents
+import "../components/effects/" as MotifEffects
 
 Label {
     id: item
@@ -41,12 +41,12 @@ Label {
         anchors.left: parent.left
         anchors.right: parent.right
         height: 2
-        color: MoneroComponents.Style.appWindowBorderColor
+        color: MotifComponents.Style.appWindowBorderColor
 
-        MoneroEffects.ColorTransition {
+        MotifEffects.ColorTransition {
             targetObj: parent
-            blackColor: MoneroComponents.Style._b_appWindowBorderColor
-            whiteColor: MoneroComponents.Style._w_appWindowBorderColor
+            blackColor: MotifComponents.Style._b_appWindowBorderColor
+            whiteColor: MotifComponents.Style._w_appWindowBorderColor
         }
     }
 }

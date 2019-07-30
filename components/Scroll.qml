@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The Motif Project
 // 
 // All rights reserved.
 // 
@@ -27,7 +27,7 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import QtQuick 2.9
-import "." as MoneroComponents
+import "." as MotifComponents
 
 Item {
     id: scrollItem
@@ -62,7 +62,7 @@ Item {
             return t < 50 ? 50 : t
         }
         y: 0; x: 0
-        color: MoneroComponents.Style.orange
+        color: MotifComponents.Style.orange
         opacity: flickable.moving || handleArea.pressed || scrollArea.containsMouse ? 0.8 : 0
         visible: flickable.contentHeight > flickable.height
 

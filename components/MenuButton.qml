@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The Motif Project
 // 
 // All rights reserved.
 // 
@@ -29,8 +29,8 @@
 import QtQuick 2.9
 import QtGraphicalEffects 1.0
 
-import "../components" as MoneroComponents
-import "effects/" as MoneroEffects
+import "../components" as MotifComponents
+import "effects/" as MotifEffects
 
 Rectangle {
     id: button
@@ -73,8 +73,8 @@ Rectangle {
         start: Qt.point(width, 0)
         end: Qt.point(0, 0)
         gradient: Gradient {
-            GradientStop { position: 0.0; color: MoneroComponents.Style.menuButtonGradientStart }
-            GradientStop { position: 1.0; color: MoneroComponents.Style.menuButtonGradientStop }
+            GradientStop { position: 0.0; color: MotifComponents.Style.menuButtonGradientStart }
+            GradientStop { position: 1.0; color: MotifComponents.Style.menuButtonGradientStop }
         }
     }
 
@@ -82,7 +82,7 @@ Rectangle {
     Rectangle {
         visible: !isOpenGL && button.checked
         anchors.fill: parent
-        color: MoneroComponents.Style.menuButtonFallbackBackgroundColor
+        color: MotifComponents.Style.menuButtonFallbackBackgroundColor
     }
 
     // button decorations that are subject to leftMargin offsets
@@ -105,17 +105,17 @@ Rectangle {
             Image {
                 anchors.centerIn: parent
                 anchors.left: parent.left
-                source: MoneroComponents.Style.menuButtonImageDotArrowSource
+                source: MotifComponents.Style.menuButtonImageDotArrowSource
                 visible: button.checked
             }
         }
 
         // button text
-        MoneroComponents.TextPlain {
+        MotifComponents.TextPlain {
             id: label
-            color: MoneroComponents.Style.menuButtonTextColor
-            themeTransitionBlackColor: MoneroComponents.Style._b_menuButtonTextColor
-            themeTransitionWhiteColor: MoneroComponents.Style._w_menuButtonTextColor
+            color: MotifComponents.Style.menuButtonTextColor
+            themeTransitionBlackColor: MotifComponents.Style._b_menuButtonTextColor
+            themeTransitionWhiteColor: MotifComponents.Style._w_menuButtonTextColor
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.right
             anchors.leftMargin: 8
@@ -125,26 +125,26 @@ Rectangle {
     }
 
     // menu button right arrow
-    MoneroEffects.ImageMask {
+    MotifEffects.ImageMask {
         anchors.verticalCenter: parent.verticalCenter
         anchors.leftMargin: parent.getOffset()
         anchors.right: parent.right
         anchors.rightMargin: 20
         height: 14
         width: 8
-        image: MoneroComponents.Style.menuButtonImageRightSource
-        color: button.checked ? MoneroComponents.Style.menuButtonImageRightColorActive : MoneroComponents.Style.menuButtonImageRightColor
+        image: MotifComponents.Style.menuButtonImageRightSource
+        color: button.checked ? MotifComponents.Style.menuButtonImageRightColorActive : MotifComponents.Style.menuButtonImageRightColor
         opacity: button.checked ? 0.8 : 0.25
     }
 
-    MoneroComponents.TextPlain {
+    MotifComponents.TextPlain {
         id: symbolText
         anchors.right: parent.right
         anchors.rightMargin: 44
         anchors.verticalCenter: parent.verticalCenter
         font.pixelSize: 12
         font.bold: true
-        color: button.checked || buttonArea.containsMouse ? MoneroComponents.Style.menuButtonTextColor : dot.color
+        color: button.checked || buttonArea.containsMouse ? MotifComponents.Style.menuButtonTextColor : dot.color
         visible: appWindow.ctrlPressed
         themeTransition: false
     }

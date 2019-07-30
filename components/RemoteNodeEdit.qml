@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The Motif Project
 // 
 // All rights reserved.
 // 
@@ -32,7 +32,7 @@ import QtQuick 2.9
 import QtQuick.Layouts 1.1
 
 import "../js/Utils.js" as Utils
-import "../components" as MoneroComponents
+import "../components" as MotifComponents
 
 GridLayout {
     columns: (isMobile) ? 1 : 2
@@ -45,16 +45,16 @@ GridLayout {
 
     // TODO: LEGACY; remove these placeHolder variables when
     // the wizards get redesigned to the black-theme
-    property string placeholderFontFamily: MoneroComponents.Style.fontRegular.name
+    property string placeholderFontFamily: MotifComponents.Style.fontRegular.name
     property bool placeholderFontBold: false
     property int placeholderFontSize: 15
-    property string placeholderColor: MoneroComponents.Style.defaultFontColor
+    property string placeholderColor: MotifComponents.Style.defaultFontColor
     property real placeholderOpacity: 0.35
     property int labelFontSize: 14
 
     property string lineEditBackgroundColor: "transparent"
-    property string lineEditBorderColor: MoneroComponents.Style.inputBorderColorInActive
-    property string lineEditFontColor: MoneroComponents.Style.defaultFontColor
+    property string lineEditBorderColor: MotifComponents.Style.inputBorderColorInActive
+    property string lineEditFontColor: MotifComponents.Style.defaultFontColor
     property bool lineEditFontBold: false
     property int lineEditFontSize: 15
 

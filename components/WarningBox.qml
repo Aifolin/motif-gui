@@ -2,7 +2,7 @@ import QtQuick 2.9
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.0
 
-import "." as MoneroComponents
+import "." as MotifComponents
 
 Rectangle {
     id: root
@@ -13,9 +13,9 @@ Rectangle {
     Layout.fillWidth: true
     Layout.preferredHeight: warningLayout.height
 
-    color: MoneroComponents.Style.titleBarButtonHoverColor
+    color: MotifComponents.Style.titleBarButtonHoverColor
     radius: 4
-    border.color: MoneroComponents.Style.inputBorderColorInActive
+    border.color: MotifComponents.Style.inputBorderColorInActive
     border.width: 1
 
     signal linkActivated;
@@ -40,8 +40,8 @@ Rectangle {
         TextArea {
             id: content
             Layout.fillWidth: true
-            color: MoneroComponents.Style.defaultFontColor
-            font.family: MoneroComponents.Style.fontRegular.name
+            color: MotifComponents.Style.defaultFontColor
+            font.family: MotifComponents.Style.fontRegular.name
             font.pixelSize: root.fontSize
             horizontalAlignment: TextInput.AlignLeft
             selectByMouse: true
@@ -55,8 +55,8 @@ Rectangle {
             readOnly: true
             onLinkActivated: root.linkActivated();
 
-            selectionColor: MoneroComponents.Style.textSelectionColor
-            selectedTextColor: MoneroComponents.Style.textSelectedColor
+            selectionColor: MotifComponents.Style.textSelectionColor
+            selectedTextColor: MotifComponents.Style.textSelectedColor
         }
     }
 }

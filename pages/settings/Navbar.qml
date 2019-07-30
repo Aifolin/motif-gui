@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The Motif Project
 // 
 // All rights reserved.
 // 
@@ -33,10 +33,10 @@ import QtQuick.Layouts 1.1
 import QtQuick.Dialogs 1.2
 import "../../js/Windows.js" as Windows
 import "../../js/Utils.js" as Utils
-import "../../components" as MoneroComponents
+import "../../components" as MotifComponents
 import "../../pages"
 import "."
-import moneroComponents.Clipboard 1.0
+import motifComponents.Clipboard 1.0
 
 Rectangle {
     Layout.fillWidth: true
@@ -53,12 +53,12 @@ Rectangle {
             id: grid
             Layout.alignment: Qt.AlignHCenter
             columnSpacing: 0
-            property string fontColorActive: MoneroComponents.Style.blackTheme ? "white" : "white"
-            property string fontColorInActive: MoneroComponents.Style.blackTheme ? "white" : MoneroComponents.Style.dimmedFontColor
+            property string fontColorActive: MotifComponents.Style.blackTheme ? "white" : "white"
+            property string fontColorInActive: MotifComponents.Style.blackTheme ? "white" : MotifComponents.Style.dimmedFontColor
             property int fontSize: 15
             property bool fontBold: true
-            property var fontFamily: MoneroComponents.Style.fontRegular.name
-            property string borderColor: MoneroComponents.Style.blackTheme ? "#808080" : "#B9B9B9"
+            property var fontFamily: MotifComponents.Style.fontRegular.name
+            property string borderColor: MotifComponents.Style.blackTheme ? "#808080" : "#B9B9B9"
             property int textMargin: {
                 // left-right margins for a given cell
                 if(isMobile){
@@ -133,7 +133,7 @@ Rectangle {
                     height: 30
                     Layout.fillWidth: true
 
-                    MoneroComponents.TextPlain {
+                    MotifComponents.TextPlain {
                         id: navWalletText
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.verticalCenter: parent.verticalCenter
@@ -185,7 +185,7 @@ Rectangle {
                     height: 30
                     Layout.fillWidth: true
 
-                    MoneroComponents.TextPlain {
+                    MotifComponents.TextPlain {
                         id: navUIText
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.verticalCenter: parent.verticalCenter
@@ -238,7 +238,7 @@ Rectangle {
                     height: 30
                     Layout.fillWidth: true
 
-                    MoneroComponents.TextPlain {
+                    MotifComponents.TextPlain {
                         id: navNodeText
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.verticalCenter: parent.verticalCenter
@@ -292,7 +292,7 @@ Rectangle {
                     height: 30
                     Layout.fillWidth: true
 
-                    MoneroComponents.TextPlain {
+                    MotifComponents.TextPlain {
                         id: navLogText
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.verticalCenter: parent.verticalCenter
@@ -345,7 +345,7 @@ Rectangle {
                     height: 30
                     Layout.fillWidth: true
 
-                    MoneroComponents.TextPlain {
+                    MotifComponents.TextPlain {
                         id: navInfoText
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.verticalCenter: parent.verticalCenter

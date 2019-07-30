@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Motif Project
 // 
 // All rights reserved.
 // 
@@ -32,7 +32,7 @@ import QtQuick.Layouts 1.2
 import QtGraphicalEffects 1.0
 import QtQuick.Controls 2.0
 
-import "../components" as MoneroComponents
+import "../components" as MotifComponents
 
 RowLayout {
     id: rowlayout
@@ -50,14 +50,14 @@ RowLayout {
 
         Image {
             id: icon
-            visible: !isOpenGL || MoneroComponents.Style.blackTheme
+            visible: !isOpenGL || MotifComponents.Style.blackTheme
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             source: ""
         }
 
         DropShadow {
-            visible: isOpenGL && !MoneroComponents.Style.blackTheme
+            visible: isOpenGL && !MotifComponents.Style.blackTheme
             anchors.fill: icon
             horizontalOffset: 3
             verticalOffset: 3
@@ -82,15 +82,15 @@ RowLayout {
         Layout.fillWidth: true
         spacing: 0
 
-        MoneroComponents.TextPlain {
+        MotifComponents.TextPlain {
             id: header
             Layout.fillWidth: true
             leftPadding: parent.leftPadding
             topPadding: 0
-            color: MoneroComponents.Style.defaultFontColor
-            opacity: MoneroComponents.Style.blackTheme ? 1.0 : 0.8
+            color: MotifComponents.Style.defaultFontColor
+            opacity: MotifComponents.Style.blackTheme ? 1.0 : 0.8
             font.bold: true
-            font.family: MoneroComponents.Style.fontRegular.name
+            font.family: MotifComponents.Style.fontRegular.name
             font.pixelSize: {
                 if(wizardController.layoutScale === 2 ){
                     return 22;
@@ -108,11 +108,11 @@ RowLayout {
             }
         }
 
-        MoneroComponents.TextPlain {
+        MotifComponents.TextPlain {
             id: body
             Layout.fillWidth: true
-            color: MoneroComponents.Style.dimmedFontColor
-            font.family: MoneroComponents.Style.fontRegular.name
+            color: MotifComponents.Style.dimmedFontColor
+            font.family: MotifComponents.Style.fontRegular.name
             font.pixelSize: {
                 if(wizardController.layoutScale === 2 ){
                     return 16;
