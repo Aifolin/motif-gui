@@ -1,4 +1,3 @@
 [submodule "motif"]
 	path = motif
 	url = https://github.com/Aifolin/motif
-	ignore = all
