@@ -1,4 +1,4 @@
-[submodule "monero"]
-	path = monero
-	url = https://github.com/monero-project/monero
+[submodule "motif"]
+	path = motif
+	url = https://github.com/aifolin/motif
 	ignore = all
